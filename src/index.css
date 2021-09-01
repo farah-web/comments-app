@@ -1,13 +1,230 @@
+html{
+  font-size: 62.5%;
+}
+:root{
+  --blueDark:rgb(19,39,79);
+  --blueLight:rgb(50, 99, 197);
+  --black:#000;
+  --white:#fff;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding:0;
+  box-sizing: border-box;
+  font-family:'Trebuchet MS', Arial, sans-serif;
+  background-color: var(--blueDark);
+ }
+ /* ---------------------Header------------------------ */
+ .header{
+   height:4rem;
+   background-color: var(--black);
+   margin: 0;
+   width: 100%;
+   }
+
+   .header >ul{
+     display: flex;
+     align-items: center;
+     justify-content: end;
+     margin: 0;
+   }
+
+   .menuItems{
+     list-style: none;
+     text-decoration: none;
+     padding: 1rem 0;
+     margin-right: 2rem;
+     color: var(--white);
+     font-size: 1.4rem;
+   }
+   
+/* ---------------------Users------------------------ */
+.users {
+ margin-left: 2rem;
+  }
+
+.users > h1{
+ color:var(--white);
+  }
+
+.users__data{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+ }
+
+.users__display{
+flex:0.7;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.users__update{
+  flex:0.3;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  }
+
+  .users__update >input{
+    padding:1rem;
+    outline: none;
+   }
+
+  .users__update >h2{
+    color:var(--white);
+   }
+
+  .btn{
+    padding:1rem;
+    outline: none;
+    border: none;
+    background-color: #76a4f0;
+    transition:all 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  .btn:hover{
+    background-color: rgb(174, 200, 240)
+  }
+
+.users__display>table{
+  border:none;
+  width:100%;
+  background-color: #76a4f0;
 }
+
+.users__display>table>:nth-child(even){
+  background-color: #bdc1c7;
+}
+
+tr{
+height:3rem;
+font-size:1.6rem;
+}
+
+td{
+  padding:1rem;
+}
+/* ---------------------Comments------------------------ */
+
+.comments{
+  background-color: var(--blueDark);
+  min-height:100%;
+  max-height: max-content;
+  color:var(--white);
+ }
+ .comments >h1{
+   margin: 0 2rem;
+   font-size: 4rem;
+  }
+
+.comment{
+  display:grid;
+  grid-template-columns: 1fr 3fr;
+  width:50%;
+  margin:2rem 2rem 0 2rem;
+  justify-content: center;
+  align-items: center;
+ }
+
+.comment__avatar{
+  padding: 2rem;
+ }
+
+.comment__avatar >img{
+  width:100%;
+  border-radius: 50%;
+  border:0.4rem solid var(--blueLight);
+}
+
+.comment__txt{
+  display: flex;
+  flex-direction: column;
+}
+
+.comment__txtcontent{
+  display: flex;
+  align-items:center;
+  justify-content: end; 
+ }
+
+.comment__txtcontent >h2{
+  font-size:2rem;
+  margin:1rem;
+}
+.comment__txtcontent >small{
+  font-size:1.2rem;
+  opacity: 0.7;
+}
+
+.comment__post{
+  font-size:2.4rem;
+  margin:0 1rem;
+ }
+
+@media only screen and (max-width: 400px)
+{
+  .comment{
+  display:grid;
+  grid-template-columns: 1fr;
+  width:100%;
+  place-items: center;
+  margin:0;
+ }
+
+ .comments >h1{
+   text-align: center;
+ }
+
+.comment__avatar >img{
+  border-radius: 50%;
+  border:0.4rem solid var(--blueLight);
+}
+
+.comment__txtcontent{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  }
+}
+
+@media only screen and (min-width:400px) and (max-width: 600px)
+{
+  .comment{
+    display:grid;
+    grid-template-columns: 1fr;
+    width:100%;
+    place-items: center;
+    margin:0;
+   }
+   
+   .comments >h1{
+    text-align: center;
+  }
+
+  .comment__avatar >img{
+    border-radius: 50%;
+    border:0.4rem solid var(--blueLight);
+  }
+  
+  .comment__txtcontent{
+    display: flex;
+    flex-wrap: wrap;
+    }
+
+    .comment__txtcontent >h2{
+      font-size:2rem;
+      margin:1rem;
+    }
+    .comment__txtcontent >small{
+      font-size:1.2rem;
+      opacity: 0.7;
+    }
+    
+    .comment__post{
+      font-size:2.4rem;
+      margin:0 1rem;
+     }
+}
+
+
