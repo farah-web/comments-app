@@ -15,10 +15,6 @@ const Users = () => {
         const data = axios.get("https://jsonplaceholder.typicode.com/users")
             .then((response) => {
                 setUser(response.data)
-                // setName(response.data[0].name)
-                // setPhone(response.data[0].phone)
-                // setEmail(response.data[0].email)
-                // setId(response.data[0].id)
             })
             .catch((error) => {
                 console.log(error.message)
@@ -48,9 +44,9 @@ const Users = () => {
                     }
                     setUser([...users]);
                     setName('')
-                setPhone('')
-                setEmail('')
-                
+                    setPhone('')
+                    setEmail('')
+
                 })
             }).catch((error) => error.message)
     }
@@ -89,9 +85,8 @@ const Users = () => {
                                         <td>{users.name}</td>
                                         <td>{users.email}</td>
                                         <td>{users.phone}</td>
-                                        <td><button className='btn' onClick={() => deleteUser(users.id)}>Delete</button> &nbsp; &nbsp;
-                                            <button className='btn' onClick={() => selectUser(users.id)}>Update</button></td>
-
+                                        <td id='operations'><button className='btn td-btn' onClick={() => deleteUser(users.id)}>Delete</button> &nbsp; &nbsp;
+                                            <button className='btn td-btn' onClick={() => selectUser(users.id)}>Update</button></td>
                                     </tr>
                                 )
                             }
@@ -100,7 +95,7 @@ const Users = () => {
                 </div>
 
                 <div className='users__update'>
-                <h2>Fetch User Record</h2>
+                    <h2>Fetch User Record</h2>
                     <input type="text" value={name} onChange={(e) => { setName(e.target.value) }} /> <br /><br />
                     <input type="text" value={email} onChange={(e) => { setEmail(e.target.value) }} /> <br /><br />
                     <input type="text" value={phone} onChange={(e) => { setPhone(e.target.value) }} /> <br /><br />
